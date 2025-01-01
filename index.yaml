@@ -3,7 +3,17 @@ entries:
   eks-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-01-01T13:02:16.871968411Z"
+    created: "2025-01-01T13:11:10.016789882Z"
+    description: A Helm chart for Kubernetes
+    digest: d85d476bd8589533d85ee3baf642390c54e1e6070eea63aa2c9745527bb73b3a
+    name: eks-app
+    type: application
+    urls:
+    - https://lokesh1306.github.io/helm/charts/charts/eks-app-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-01-01T13:11:10.016241239Z"
     description: A Helm chart for Kubernetes
     digest: 7889024c8a0c26adf33d5fc5d10b6a5e511d93610798d5c8691191b57fbc40fb
     name: eks-app
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://lokesh1306.github.io/helm/charts/charts/eks-app-0.3.0.tgz
     version: 0.3.0
-generated: "2025-01-01T13:02:16.87134745Z"
+generated: "2025-01-01T13:11:10.015590826Z"
