@@ -51,6 +51,16 @@ spec:
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}
+        - name: aws-cli
+          image: amazon/aws-cli:latest
+          command: ["/bin/sh", "-c"]
+          args:
+            - sleep 3600;
+        - name: kubectl
+          image: bitnami/kubectl:latest
+          command: ["/bin/sh", "-c"]
+          args:
+            - sleep 3600;
       {{- with .Values.volumes }}
       volumes:
         {{- toYaml . | nindent 8 }}
