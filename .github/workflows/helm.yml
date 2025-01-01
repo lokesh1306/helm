@@ -77,11 +77,13 @@ jobs:
           path: gh-pages
           clean: false
 
-      - name: Configure gh-pages
+      - name: Configure gh-pages and update repository
         run: |
-          mkdir -p gh-pages/charts
-          cp *.tgz gh-pages/charts/
           cd gh-pages
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          mkdir -p charts
+          cp ../*.tgz charts/
           helm repo index . --url https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/charts
           git add .
           git commit -m "Release v${{ steps.get_version.outputs.VERSION }}"
