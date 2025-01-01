@@ -84,7 +84,9 @@ jobs:
           git config user.email "github-actions@users.noreply.github.com"
           mkdir -p charts
           cp ../*.tgz charts/
+          cd charts
           helm repo index . --url https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/charts
+          cd ..
           git add .
           git commit -m "Release v${{ steps.get_version.outputs.VERSION }}"
           git push origin gh-pages
