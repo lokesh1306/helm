@@ -118,7 +118,7 @@ affinity:
             - key: app
               operator: In
               values:
-                - my-app
+                - eks
         topologyKey: "kubernetes.io/hostname"
   nodeAffinity:
     requiredDuringSchedulingIgnoredDuringExecution:
