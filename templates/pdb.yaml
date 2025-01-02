@@ -1,0 +1,13 @@
+{{- if .Values.pdb.enabled }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "eks-app.fullname" . }}
+  labels:
+    {{- include "eks-app.labels" . | nindent 4 }}
+spec:
+  minAvailable: {{ .Values.pdb.minAvailable | default "1" }}
+  selector:
+    matchLabels:
+      {{- include "eks-app.selectorLabels" . | nindent 6 }}
+{{- end }}
