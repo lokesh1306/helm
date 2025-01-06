@@ -17,9 +17,13 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.targetPort }}
-      protocol: TCP
+    - protocol: TCP
       name: http
+      port: {{ .Values.service.httpport }}
+      targetPort: {{ .Values.service.targetPort | default 3000 }}
+    - protocol: TCP
+      port: {{ .Values.service.httpsport }}
+      name: https
+      targetPort: {{ .Values.service.targetPort | default 3000 }}
   selector:
     {{- include "eks-app.selectorLabels" . | nindent 4 }}
